@@ -17,15 +17,14 @@ public class ProductController {
 	
 	//상품 등록 페이지 이동
 	@GetMapping("/insertProduct")
-	public String insertProduct(ProductVO pVO) {
+	public String insertProduct(ProductVO pVO, Model model) {
+		model.addAttribute("pId", service.getProductId().getProductId());
 		return "product/insertProduct";
 	}
 	//상품 등록 처리
 	@RequestMapping(value ="/insertProduct", method = RequestMethod.POST)
-	public String insertForm(Model model, ProductVO pVO) {
-			System.out.println(service.getProductId());
-			model.addAttribute("pId", service.getProductId());
-		return "redirect/productList";
+	public String insertForm(ProductVO pVO) {
+		return "redirect:productList";
 	}
 
 }
