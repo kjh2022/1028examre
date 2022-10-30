@@ -1,5 +1,7 @@
 package com.yedam.java.product.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public int insertProduct(ProductVO pVO) {
 		return mapper.insertProduct(pVO);
+	}
+
+	@Override
+	public List<ProductVO> getProductList() {
+		return mapper.getProductList();
 	}
 
 }

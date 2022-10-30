@@ -11,8 +11,8 @@
 		<package name="com.yedam.java.emp.service" />
 		<package name="com.yedam.java.product.service"/>
 	</typeAliases>
-	<typeHandlers>
+<!-- 	<typeHandlers>
 		<typeHandler javaType="java.sql.Date"
 			handler="org.apache.ibatis.type.DateTypeHandler" />
-	</typeHandlers>
+	</typeHandlers> -->
 </configuration>

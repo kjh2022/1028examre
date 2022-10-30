@@ -18,7 +18,8 @@
 									,product_date
 									,company
 									,manager_id)
-						VALUES(  #{productId}
+						VALUES(  (SELECT NVL(MAX(product_id), 0) + 1 AS productId
+									FROM product_tbl_10)
 								<if test="productName != null and !productName.equals('')">
 								,#{productName}
 								</if>
@@ -28,4 +29,11 @@
 								,#{company}
 								,#{managerId})
 	</insert>
+	
+	<!-- 상품 전체 리스트 출력 -->
+	<select id="getProductList" resultType="ProductVO">
+		SELECT *
+		FROM product_tbl_10
+		ORDER BY product_id
+	</select>
 </mapper>
